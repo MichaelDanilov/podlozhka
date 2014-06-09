@@ -1,0 +1,44 @@
+@import url("twbs/bootstrap.less");
+
+.dnlv-podlozhka {
+  &-twbs {
+    .input-group {
+      margin-bottom: 20px;
+      margin-right: 10px;
+      width: 150px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__body {
+    display: block;
+    cursor: move;
+    opacity: 1.0;
+    z-index: 999;
+  }
+
+  &__form {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 342px;
+    z-index: 2000;
+  }
+
+  &__img {
+    background-position: left top;
+    background-repeat: no-repeat;
+    cursor: move;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}

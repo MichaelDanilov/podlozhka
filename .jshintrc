@@ -1,0 +1,15 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "expr": true,
+  "immed": true,
+  "multistr": true,
+  "onevar": true,
+  "quotmark": "double",
+  "trailing": true,
+  "unused": true,
+
+  "jquery": true,
+  "node": true
+}
