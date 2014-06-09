@@ -1,0 +1,35 @@
+{
+  "name": "Podlozhka",
+  "version": "1.0.0",
+  "description": "Tools for pixel perfect coding",
+  "main": "_podlozhka/podlozhka.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jquery",
+    "pixel",
+    "perfect"
+  ],
+  "author": "Michael Danilov <michael@danilov.me> (https://danilov.me/)",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-less": "~0.11.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-autoprefixer": "~0.7.4",
+    "grunt-contrib-jshint": "~0.10.0"
+  },
+  "dependencies": {
+    "jquery": "~2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MichaelDanilov/podlozhka"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelDanilov/podlozhka/issues"
+  },
+  "homepage": "https://github.com/MichaelDanilov/podlozhka"
+}
