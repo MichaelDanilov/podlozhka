@@ -4,10 +4,16 @@
   var $body_elems = $('body').children(), // root
   $podlozhka = {},
   $form = {},
-  $event = {};
+  $event = {},
+  $_utils = {};
+
+  $_utils.changeImgPositions = function (x, y) {
+    $form.x.val(parseFloat(x));
+    $form.y.val(parseFloat(y));
+  }
 
   // inserted html
-  $podlozhka.html = '<div class="dnlv-podlozhka__body"></div><div class="dnlv-podlozhka__img"></div><div class="dnlv-podlozhka__form dnlv-podlozhka-twbs"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Podlozhka</h4></div><div class="modal-body"><div class="form-group"><label for="dnlv-podlozhka-form-imgsrc">Path of image</label><input type="text" class="form-control" id="dnlv-podlozhka-form-imgsrc" placeholder="_podlozhka/img/img.png" value="_podlozhka/img/img.png"></div><div class="form-group"><label>Margins</label><div class="form-inline"><div class="input-group"><span class="input-group-addon">left:</span><input type="text" class="form-control" id="dnlv-podlozhka-form-imgx"><span class="input-group-addon">px</span></div><div class="input-group"><span class="input-group-addon">top:</span><input type="text" class="form-control" id="dnlv-podlozhka-form-imgy"><span class="input-group-addon">px</span></div></div></div></div></div></div>';
+  $podlozhka.html = '<div class="dnlv-podlozhka__body"></div><div class="dnlv-podlozhka__img"></div><div class="dnlv-podlozhka__form dnlv-podlozhka-twbs"><div class="modal-content"><div class="modal-header"><div class="on-off"><span class="icon-off"></span></div><h4 class="modal-title">Podlozhka</h4></div><div class="modal-body"><div class="form-group"><label for="dnlv-podlozhka-form-imgsrc">Path of image</label><input type="text" class="form-control" id="dnlv-podlozhka-form-imgsrc" placeholder="_podlozhka/img/img.png" value="_podlozhka/img/img.png"></div><div class="form-group"><label>Margins</label><div class="form-inline"><div class="input-group"><span class="input-group-addon">left:</span><input type="text" class="form-control" id="dnlv-podlozhka-form-imgx"><span class="input-group-addon">px</span></div><div class="input-group"><span class="input-group-addon">top:</span><input type="text" class="form-control" id="dnlv-podlozhka-form-imgy"><span class="input-group-addon">px</span></div></div></div></div></div></div>';
   // styles
   $podlozhka.css = '<link rel="stylesheet" href="_podlozhka/podlozhka.min.css">';
   $podlozhka.img_src = '';
@@ -40,11 +46,21 @@
     y: 0
   };
 
-  function changeImgPositions (x, y) {
-    $form.x.val(parseFloat(x));
-    $form.y.val(parseFloat(y));
-  }
+  // on-off podlozhka
+  $('.on-off').on('click',function (){
+    var $this = $(this);
+    if ($this.hasClass('on-off_active')) {
+      $('.dnlv-podlozhka__form .modal-body').hide();
+      $this.removeClass('on-off_active');
+      $podlozhka.img_wrap.show();
+    } else {
+      $('.dnlv-podlozhka__form .modal-body').show();
+      $this.addClass('on-off_active');
+      $podlozhka.img_wrap.show();
+    }
+  });
 
+  // worker on change path to image
   $form.img_src.on('keyup',function () {
 
     $podlozhka.img_src = $form.img_src.val();
@@ -55,7 +71,7 @@
 
     $event.mousedown = false;
 
-    changeImgPositions($podlozhka.mouse_positions.x, $podlozhka.mouse_positions.y);
+    $_utils.changeImgPositions($podlozhka.mouse_positions.x, $podlozhka.mouse_positions.y);
 
     $podlozhka.img_wrap.on('mousedown',function(event){
       if (!$event.mousedown) {
@@ -85,7 +101,7 @@
         if ($positions) {
           $podlozhka.img_positions.x = parseFloat($positions[1]);
           $podlozhka.img_positions.y = parseFloat($positions[2]);
-          changeImgPositions($positions[1], $positions[2]);
+          $_utils.changeImgPositions($positions[1], $positions[2]);
           return;
         }
       }
