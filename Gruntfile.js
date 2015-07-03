@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> <<%= pkg.repository %>> */\n'
+        banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> <<%= pkg.repository.url %>> */\n'
       },
       development: {
         files: {
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     cssmin: {
       add_banner: {
         options: {
-          banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> <<%= pkg.repository %>> */\n'
+          banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> <<%= pkg.repository.url %>> */\n'
         },
         files: {
           '_podlozhka/podlozhka.min.css': ['_podlozhka/podlozhka.css']

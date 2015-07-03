@@ -1,6 +1,6 @@
 {
   "name": "Podlozhka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools for pixel perfect coding",
   "main": "_podlozhka/podlozhka.min.js",
   "scripts": {
@@ -11,8 +11,17 @@
     "pixel",
     "perfect"
   ],
-  "author": "Michael Danilov <michael@danilov.me> (https://danilov.me/)",
-  "license": "MIT",
+  "author": {
+    "name": "Michael Danilov",
+    "email": "michael@danilov.me",
+    "url": "https://danilov.me/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/MichaelDanilov/podlozhka/blob/master/LICENSE"
+    }
+  ],
   "devDependencies": {
     "grunt-contrib-less": "~0.11.1",
     "grunt-contrib-watch": "~0.6.1",
