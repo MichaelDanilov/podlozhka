@@ -1,6 +1,6 @@
 {
   "name": "Podlozhka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools for pixel perfect coding",
   "main": "_podlozhka/podlozhka.min.js",
   "scripts": {
